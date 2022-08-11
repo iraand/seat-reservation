@@ -1,11 +1,10 @@
+# Seat Reservation Servise
 
-Welcome to seat-reservation
+### Welcome to seat-reservation
 
-Seat Reservation Service :
 Find the best available seats for 2-8 visitors among random reserved seats.
 
 ## Description
-
 ### Main Responsibilities
 
 * Rendom input number of currently reserved seats from 20% to 100%.
