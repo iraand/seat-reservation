@@ -35,6 +35,7 @@ Find the best available seats for 2-8 visitors among random reserved seats.
 $ git clone https://github.com/iraand/seat-reservation.git && cd seat-reservation 
 ```
 
+
 ### Getting up and running
 
 Service designed with JavaScript and jQuery for GUI without any other third party source.
@@ -47,11 +48,15 @@ To start the service use:
 * findSeats.js  - seaching the best available alternative
 
 
+
 GUI created with jquery.min.js and basic html/css:
 * index.html
 * style.css
 
 
+
 ### Unit & functional tests
 
-* for manual testing use simple GUI
+* Unit Testing might be implemented. 
+* Manual testing using GUI.
+
