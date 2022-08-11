@@ -37,16 +37,21 @@ $ git clone https://github.com/iraand/seat-reservation.git && cd seat-reservatio
 
 ### Getting up and running
 
+Service designed with JavaScript and jQuery for GUI without any other third party source.
+
 To start the service use:
 
 * seats.js - stub with data of seats;
 * reserveSeats.js - to generate rendom reservation of seats 
-* createSeats.js - to build seats from data
+* createSeats.js - to build seats for GUI from data
 * findSeats.js  - seaching the best available alternative
 
 
-GUI created with basic html/css
+GUI created with jquery.min.js and basic html/css:
+* index.html
+* style.css
 
 
 ### Unit & functional tests
 
+* for manual testing use simple GUI

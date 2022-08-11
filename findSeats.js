@@ -38,7 +38,7 @@ const findTheBestAvailableSeats = (numPersons) => {
             
             console.log(theBestAvailableSeats);
     
-            createMassage(theBestAvailableSeats); 
+            createMessage(theBestAvailableSeats); 
         
             return theBestAvailableSeats; 
         }
@@ -47,7 +47,7 @@ const findTheBestAvailableSeats = (numPersons) => {
     
         console.log(theBestAvailableSeats);
     
-        createMassage(theBestAvailableSeats); 
+        createMessage(theBestAvailableSeats); 
     
         return theBestAvailableSeats;
     } 
@@ -79,7 +79,7 @@ const findTheBestAvailableSeats = (numPersons) => {
             
             console.log(theBestAvailableSeats);
         
-            createMassage(theBestAvailableSeats); 
+            createMessage(theBestAvailableSeats); 
         
             return theBestAvailableSeats;
         } 
@@ -98,7 +98,7 @@ const findTheBestAvailableSeats = (numPersons) => {
 
         console.log(theBestAvailableSeats);
         
-        createMassage(theBestAvailableSeats); 
+        createMessage(theBestAvailableSeats); 
     
         return theBestAvailableSeats;   
     }
@@ -157,12 +157,6 @@ const findSide = (theBestAvailableSeats, numPersons) => {
             return accum;
         
         }, []); 
-
-        let indexOfmiddle = Math.floor(row.length/2)
-
-        let left = row.slice(0, indexOfmiddle-2).map(seat => seat.seat);
-        let right = row.slice(indexOfmiddle+2, row.length).map(seat => seat.seat);
-        let center = row.slice(indexOfmiddle-1, indexOfmiddle+2).map(seat => seat.seat);
 
         let lastSeats = row[row.length - 1].seat - theBestAvailableSeats[lengthOfTheBestAvailableSeats - 1].seat;
         let firstSeats = theBestAvailableSeats[0].seat - row[0].seat;
@@ -226,19 +220,19 @@ const createCollections = (seats, numPersons) => {
 
 }
 
-const createMassage = (found) => {
+const createMessage = (found) => {
     $(".proces").removeClass("visible");          
     $(".result").addClass("visible");
-    let massage = " No seats found! Input less persons or less number of reserved seats!";
+    let message = " No seats found! Input less persons or less number of reserved seats!";
 
     if(!found) {
-        return $('.num').html(massage); 
+        return $('.num').html(message); 
     }
 
-    massage = found.map((seat, i) => {
+    message = found.map((seat, i) => {
         $(`#${seat.seatID}`).addClass("best");
         return ` ${i+1}. Section: ${seat.section}, Row: ${seat.row}, Seat: ${seat.seat}, Price: ${seat.price} Ft<br>`;           
     });
 
-    $('.num').html(massage);  
+    $('.num').html(message);  
 }
