@@ -1,4 +1,7 @@
-export const findTheBestAvailableSeats = (numPersons) => {
+import { Seats } from '@/seats';
+let seats = Seats.seats;
+
+export const findTheBestAvailableSeats = (numPersons) => {   
     let theBestAvailableSeats = [],
         side = '',
         availableSeats = createCollections(seats, numPersons);

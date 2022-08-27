@@ -1,6 +1,9 @@
+import { Seats } from '@/seats';
+
 // Random reserve seats 
 
 export const reserveSeats = (countReservedSeats) => {
+    let seats = Seats.seats;
 
     if(countReservedSeats > 0.9){
         $(".seat").addClass("unavailable");             
@@ -19,19 +22,6 @@ export const reserveSeats = (countReservedSeats) => {
         }
     }
     
-    updateSeats(randomSeatsIndexes);
+    Seats.updateSeats(randomSeatsIndexes);
 }
-
-const updateSeats = (randomIndexes) => {  
-    $(".seat").removeClass("unavailable");
-
-    return seats = seats.map((seat, index) =>{
-        if (randomIndexes.includes(index)) {            
-            $(`#${seat.seatID}`).addClass("unavailable");
-            seat.isAvailable = false;
-            return seat;
-        }
-        seat.isAvailable = true;   
-        return seat;
-    });
-}    
+ 

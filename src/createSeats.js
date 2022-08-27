@@ -1,4 +1,7 @@
+import { Seats } from '@/seats';
+
 export const createSeats = () => {
+    let seats = Seats.seats;
 
     const auditorium = seats.filter(seat => seat.section === 'auditorium'),  
         balconyMid = seats.filter(seat => seat.section === 'balconyMid'),

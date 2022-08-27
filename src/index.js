@@ -1,10 +1,12 @@
-import { createSeats } from './createSeats';
-import { reserveSeats } from './reserveSeats';
-import { findTheBestAvailableSeats } from './findSeats';
-import './styles/style.css';
+import $ from 'jquery';
+import jQuery from 'jquery';
+window.$ = jQuery;
+import { createSeats } from '@/createSeats';
+import { reserveSeats } from '@/reserveSeats';
+import { findTheBestAvailableSeats } from '@/findSeats';
+import '@/styles/style.css';
 
-
-$(window).ready(function() {
+$(() => {
     createSeats(); 
     reserveSeats(0.2);      
 });
