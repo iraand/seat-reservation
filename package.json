@@ -10,6 +10,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "deploy": "gh-pages -d dist"
   },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iraand/seat-reservation.git"
@@ -26,6 +27,9 @@
   },
   "homepage": "https://github.com/iraand/seat-reservation/",
   "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
@@ -40,6 +44,7 @@
     "webpack-dev-server": "^4.10.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "gh-pages": "^4.0.0",
     "jquery": "^3.6.1",
     "normalize.css": "^8.0.1"
