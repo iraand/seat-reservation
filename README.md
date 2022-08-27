@@ -41,6 +41,12 @@ $ git clone https://github.com/iraand/seat-reservation.git && cd seat-reservatio
 
 ### Getting up and running
 
+To install the service use:
+
+```
+npm i
+```
+
 To start the service use:
 
 ```
