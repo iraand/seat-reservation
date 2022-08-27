@@ -47,7 +47,7 @@ To start the service use:
 npm start
 ```
 
-Service designed with JavaScript and jQuery for GUI without any other third party source.
+Service designed with JavaScript and jQuery for GUI.
 
 * seats.js - stub with data of seats;
 * reserveSeats.js - to generate rendom reservation of seats 
