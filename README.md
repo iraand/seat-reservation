@@ -4,6 +4,7 @@
 
 Find the best available seats for 2-8 visitors among random reserved seats.
 
+
 ## Description
 ### Main Responsibilities
 
@@ -17,6 +18,7 @@ Find the best available seats for 2-8 visitors among random reserved seats.
 * Outcome is section, row, and seat numbers.
 * Implemented simple GUI for testing https://iraand.github.io/seat-reservation/
 
+
 ### Acceptance criteria
 
 * Seat Reservation Service should find number of available seats with better location that mean higher price.
@@ -28,6 +30,7 @@ Find the best available seats for 2-8 visitors among random reserved seats.
 * If two or more seats are in the same row, the one(s) in the centre is (are) preferred.
 * The expected outcome is an alternative that meets the requirements specifications of section, row, and seat numbers
 
+
 ### Running
 1. Clone the repository and enter the 
 
@@ -38,9 +41,13 @@ $ git clone https://github.com/iraand/seat-reservation.git && cd seat-reservatio
 
 ### Getting up and running
 
-Service designed with JavaScript and jQuery for GUI without any other third party source.
-
 To start the service use:
+
+```
+npm start
+```
+
+Service designed with JavaScript and jQuery for GUI without any other third party source.
 
 * seats.js - stub with data of seats;
 * reserveSeats.js - to generate rendom reservation of seats 
