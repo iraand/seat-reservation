@@ -1,6 +1,8 @@
 import { createSeats } from './createSeats';
 import { reserveSeats } from './reserveSeats';
 import { findTheBestAvailableSeats } from './findSeats';
+import './styles/style.css';
+
 
 $(window).ready(function() {
     createSeats(); 
