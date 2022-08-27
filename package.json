@@ -7,7 +7,8 @@
     "test": "test",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/iraand/seat-reservation/issues"
   },
-  "homepage": "https://github.com/iraand/seat-reservation/dist",
+  "homepage": "https://github.com/iraand/seat-reservation/",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
@@ -39,6 +40,7 @@
     "webpack-dev-server": "^4.10.0"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "jquery": "^3.6.1",
     "normalize.css": "^8.0.1"
   }
