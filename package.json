@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/iraand/seat-reservation/issues"
   },
-  "homepage": "https://github.com/iraand/seat-reservation",
+  "homepage": "https://github.com/iraand/seat-reservation/dist",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
