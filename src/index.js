@@ -1,49 +1,49 @@
-import $ from 'jquery';
-import jQuery from 'jquery';
-window.$ = jQuery;
-import { createSeats } from '@/createSeats';
-import { reserveSeats } from '@/reserveSeats';
-import { findTheBestAvailableSeats } from '@/findSeats';
-import '@/styles/style.css';
+import $ from 'jquery'
+import jQuery from 'jquery'
+import { createSeats } from '@/createSeats'
+import { reserveSeats } from '@/reserveSeats'
+import { findTheBestAvailableSeats } from '@/findSeats'
+import '@/styles/style.css'
+window.$ = jQuery
 
 $(() => {
-    createSeats(); 
-    reserveSeats(0.2);      
-});
+  createSeats()
+  reserveSeats(0.2)
+})
 
-$(() => { 
-    const handleChange = (e) => {
-        $('.seat').removeClass("best");
-        $("button").removeClass("disable");
+$(() => {
+  const handleChange = (e) => {
+    $('.seat').removeClass('best')
+    $('button').removeClass('disable')
 
-        let value = Number(e.target.value); 
-        
-        reserveSeats(value);                      
-    };
+    const value = Number(e.target.value)
 
-    $("#select").on('change', handleChange);
-}); 
+    reserveSeats(value)
+  }
 
-$(() => { 
-    const handleChangeVisitors = (e) => {
-        e.preventDefault; 
-        $('.seat').removeClass("best");
-        $("button").removeClass("disable");
-    };
+  $('#select').on('change', handleChange)
+})
 
-    $("#visitors").on('change', handleChangeVisitors);
-});
+$(() => {
+  const handleChangeVisitors = (e) => {
+    e.preventDefault
+    $('.seat').removeClass('best')
+    $('button').removeClass('disable')
+  }
 
-$(() => { 
-    const handleClick = (e) => {
-        e.preventDefault; 
-        $('.seat').removeClass("best");
-        $("button").addClass("disable");
-         
-        let value = $("#visitors").val();
+  $('#visitors').on('change', handleChangeVisitors)
+})
 
-        findTheBestAvailableSeats(value);
-    };
+$(() => {
+  const handleClick = (e) => {
+    e.preventDefault
+    $('.seat').removeClass('best')
+    $('button').addClass('disable')
 
-    $("button").on('click', handleClick);
-});
+    const value = $('#visitors').val()
+
+    findTheBestAvailableSeats(value)
+  }
+
+  $('button').on('click', handleClick)
+})

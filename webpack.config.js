@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 const { config } = require('process');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -23,16 +24,27 @@ if (!isDev){
         new CssMinimizerPlugin(),
         new TerserPlugin()
     ]
+};
+
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+
+const jsLoaders = () => {
+    let loaders = 
+    {
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env']
+        }
+    }
+
+    return loaders;
 }
-
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
-
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: ['@babel/polyfill', './index.js']
+        main: ['./index.js']
     },
     output: {
         filename: filename('js'),
@@ -49,6 +61,7 @@ module.exports = {
         port: 3000,
         hot: isDev
     },
+    devtool: isDev ? 'source-map' : 'hidden-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
@@ -67,7 +80,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: filename('css')
-        })
+        }),
+        new ESLintPlugin()
     ],
     module: {
         rules: [
@@ -88,14 +102,9 @@ module.exports = {
                 use: ['file-loader']
             },
             {
-                test: /\.m?js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                      presets: ['@babel/preset-env']
-                    }
-                }
+                use: jsLoaders()
             }
         ]
     }
