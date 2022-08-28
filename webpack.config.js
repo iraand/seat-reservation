@@ -6,7 +6,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { config } = require('process');
+const { parseSync } = require('@babel/core');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -26,7 +28,7 @@ if (!isDev){
     ]
 };
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+const filename = ext => isDev ? `[name].${ext}` : `[name].[fullhash].${ext}`;
 
 const jsLoaders = () => {
     let loaders = 
@@ -38,6 +40,36 @@ const jsLoaders = () => {
     }
 
     return loaders;
+};
+
+const plugins = () => {
+    const base = [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            minify: {
+               collapseWhitespace: !isDev 
+            }
+        }),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/favicon.ico'),
+                    to: path.resolve(__dirname, 'dist')
+                }
+            ]    
+        }),
+        new MiniCssExtractPlugin({
+            filename: filename('css')
+        }),
+        new ESLintPlugin()
+    ];
+
+    if (!isDev) {
+        base.push(new BundleAnalyzerPlugin);
+    };
+
+    return base;
 }
 
 module.exports = {
@@ -62,27 +94,7 @@ module.exports = {
         hot: isDev
     },
     devtool: isDev ? 'source-map' : 'hidden-source-map',
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            minify: {
-               collapseWhitespace: !isDev 
-            }
-        }),
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/favicon.ico'),
-                    to: path.resolve(__dirname, 'dist')
-                }
-            ]    
-        }),
-        new MiniCssExtractPlugin({
-            filename: filename('css')
-        }),
-        new ESLintPlugin()
-    ],
+    plugins: plugins(),
     module: {
         rules: [
             {
