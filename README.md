@@ -67,9 +67,3 @@ GUI created with jquery.min.js and basic html/css:
 * style.css
 
 
-
-### Unit & functional tests
-
-* Unit Testing can be implemented to prevent errors and improve performance.
-* Manual testing using GUI.
-
