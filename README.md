@@ -35,7 +35,7 @@ Find the best available seats for 2-8 visitors among random reserved seats.
 1. Clone the repository and enter the 
 
 ```bash
-$ git clone https://github.com/iraand/seat-reservation.git && cd seat-reservation 
+$ git clone https://github.com/iraand/seats-reservation.git && cd seats-reservation 
 ```
 
 
@@ -61,9 +61,5 @@ Service designed with JavaScript and jQuery for GUI.
 * findSeats.js  - seaching the best available alternative
 
 
-
-GUI created with jquery.min.js and basic html/css:
-* index.html
-* style.css
 
 
