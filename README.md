@@ -1,4 +1,4 @@
-# Seat Reservation Servise
+# Seats Reservation Servise
 
 ### Welcome to seat-reservation
 
@@ -21,7 +21,7 @@ Find the best available seats for 2-8 visitors among random reserved seats.
 
 ### Acceptance criteria
 
-* Seat Reservation Service should find number of available seats with better location that mean higher price.
+* Seats Reservation Service should find number of available seats with better location that mean higher price.
 * If two seats fall in the same price category, the order of section preference prevails:
     - the most popular section is the stalls,
     - then the centre of the gallery, followed by the left and right sides of the gallery
