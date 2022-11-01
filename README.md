@@ -16,7 +16,7 @@ Find the best available seats for 2-8 visitors among random reserved seats.
 * If available seats are not found for input number of visitors there is show message.
 * Seaching seats are not next to each other is not implemented.
 * Outcome is section, row, and seat numbers.
-* Implemented simple GUI for testing https://iraand.github.io/seat-reservation/
+* Implemented simple GUI for testing https://iraand.github.io/seats-reservation/
 
 
 ### Acceptance criteria
